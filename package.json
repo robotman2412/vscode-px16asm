@@ -1,6 +1,8 @@
 {
 	"name": "px16asm",
-	"displayName": "px16asm",
+	"displayName": "Pixie 16 Assembly",
+	"publisher": "RobotMan2412",
+	"icon": "https://raw.githubusercontent.com/robotman2412/vscode-px16asm/main/icon128.png",
 	"description": "Pixie 16 Assembly language support",
 	"version": "1.0.0",
 	"engines": {
@@ -14,7 +16,11 @@
 			"id": "px16asm",
 			"aliases": ["Pixie 16 Assembly", "px16asm"],
 			"extensions": [".asm",".px16"],
-			"configuration": "./language-configuration.json"
+			"configuration": "./px16asm-language-configuration.json",
+			"icon": {
+				"dark": "./icon32.png",
+				"light": "./icon32.png"
+			}
 		}],
 		"grammars": [{
 			"language": "px16asm",
