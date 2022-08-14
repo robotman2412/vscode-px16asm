@@ -1,0 +1,98 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Pixie 16 Assembly",
+	"patterns": [
+		{
+			"include": "#double_strings"
+		},
+		{
+			"include": "#single_strings"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#instructions"
+		},
+		{
+			"include": "#directives"
+		},
+		{
+			"include": "#literals"
+		}
+	],
+	"repository": {
+		"instructions": {
+			"patterns": [{
+				"name": "keyword.other.px16asm",
+				"match": "\\b(add|sub|cmp|and|or|xor|shl|shr|addc|subc|cmpc|andc|orc|xorc|shlc|shrc|cmp1|cmp1c|inc|incc|dec|decc|mov|lea)\\b"
+			}, {
+				"name": "keyword.other.px16asm",
+				"match": "\\b(ADD|SUB|CMP|AND|OR|XOR|SHL|SHR|ADDC|SUBC|CMPC|ANDC|ORC|XORC|SHLC|SHRC|CMP1|CMP1C|INC|INCC|DEC|DECC|MOV|LEA)\\b"
+			}, {
+				"name": "keyword.other.px16asm",
+				"match": "\\b(ult|ugt|slt|sgt|eq|cs|uge|ule|sge|sle|ne|cc|jsr|cx)\\b"
+			}, {
+				"name": "keyword.other.px16asm",
+				"match": "\\b(ULT|UGT|SLT|SGT|EQ|CS|UGE|ULE|SGE|SLE|NE|CC|JSR|CX)\\b"
+			}, {
+				"name": "support.type.px16asm",
+				"match": "\\b(r0|r1|r2|r3|R0|R1|R2|R3)\\b"
+			}, {
+				"name": "keyword.control.px16asm",
+				"match": "\\b(st|pf|pc|ST|PF|PC)\\b"
+			}]
+		},
+		"directives": {
+			"patterns": [{
+				"name": "keyword.control.px16asm",
+				"match": "^\\s*\\.(db|zero|section)\\b"
+			}, {
+				"name": "support.function.px16asm",
+				"match": "^\\s*\\.?\\w+:"
+			}]
+		},
+		"double_strings": {
+			"name": "string.quoted.double.px16asm",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.px16asm",
+					"match": "\\\\(['\"rnftb0]|x[0-9a-fA-F]{2}|u[0-9a-fA-F]{4,5})"
+				}
+			]
+		},
+		"single_strings": {
+			"name": "string.quoted.single.px16asm",
+			"begin": "'",
+			"end": "'",
+			"patterns": [
+				{
+					"name": "constant.character.escape.px16asm",
+					"match": "\\\\(['\"rnftb0]|x[0-9a-fA-F]{2}|u[0-9a-fA-F]{4,5})"
+				}
+			]
+		},
+		"literals": {
+			"patterns": [{
+				"name": "constant.numeric.px16asm",
+				"match": "\\b0[qQoO][0-7]+\\b"
+			}, {
+				"name": "constant.numeric.px16asm",
+				"match": "\\b0[0-7]*\\b"
+			}, {
+				"name": "constant.numeric.px16asm",
+				"match": "\\b[1-9][0-9]*\\b"
+			}, {
+				"name": "constant.numeric.px16asm",
+				"match": "\\b0[xX][0-9a-fA-F]+\\b"
+			}]
+		},
+		"comments": {
+			"name": "comment.line.double-slash.px16asm",
+			"match": "(//|;).*$"
+		}
+	},
+	"scopeName": "source.px16asm"
+}

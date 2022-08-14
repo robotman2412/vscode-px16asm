@@ -1,0 +1,25 @@
+{
+	"name": "px16asm",
+	"displayName": "px16asm",
+	"description": "Pixie 16 Assembly language support",
+	"version": "1.0.0",
+	"engines": {
+		"vscode": "^1.57.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [{
+			"id": "px16asm",
+			"aliases": ["Pixie 16 Assembly", "px16asm"],
+			"extensions": [".asm",".px16"],
+			"configuration": "./language-configuration.json"
+		}],
+		"grammars": [{
+			"language": "px16asm",
+			"scopeName": "source.px16asm",
+			"path": "./syntaxes/px16asm.tmLanguage.json"
+		}]
+	}
+}
