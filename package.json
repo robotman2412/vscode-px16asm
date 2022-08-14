@@ -2,7 +2,11 @@
 	"name": "px16asm",
 	"displayName": "Pixie 16 Assembly",
 	"publisher": "RobotMan2412",
-	"icon": "https://raw.githubusercontent.com/robotman2412/vscode-px16asm/main/icon128.png",
+	"icon": "./icon128.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/robotman2412/vscode-px16asm.git"
+	},
 	"description": "Pixie 16 Assembly language support",
 	"version": "1.0.0",
 	"engines": {
