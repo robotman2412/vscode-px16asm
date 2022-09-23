@@ -2,7 +2,7 @@
 	"name": "px16asm",
 	"displayName": "Pixie 16 Assembly",
 	"publisher": "RobotMan2412",
-	"icon": "./icon256.png",
+	"icon": "./icons/icon256.png",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/robotman2412/vscode-px16asm.git"
@@ -13,7 +13,7 @@
 		"vscode": "^1.57.0"
 	},
 	"categories": [
-		"Programming Languages"
+		"Programming Languages", "Snippets"
 	],
 	"contributes": {
 		"languages": [{
@@ -22,14 +22,18 @@
 			"extensions": [".asm",".px16"],
 			"configuration": "./px16asm-language-configuration.json",
 			"icon": {
-				"dark": "./icon32.png",
-				"light": "./icon32.png"
+				"dark": "./icons/icon32.png",
+				"light": "./icons/icon32.png"
 			}
 		}],
 		"grammars": [{
 			"language": "px16asm",
 			"scopeName": "source.px16asm",
 			"path": "./syntaxes/px16asm.tmLanguage.json"
+		}],
+		"snippets": [{
+			"language": "px16asm",
+			"path": "./snippets/px16asm.json"
 		}]
 	}
 }
