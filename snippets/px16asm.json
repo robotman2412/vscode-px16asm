@@ -36,8 +36,8 @@
 		"description": "A method that iterates a string",
 		"body": [
 			"${1:function_label}:",
-			"\tLEA PC, [PC~.check]",
 			"\t${2:// Preserve registers.}",
+			"\tLEA PC, [PC~.check]",
 			".loop:",
 			"\t${3:// Loop code.}",
 			"\tINC R0",
