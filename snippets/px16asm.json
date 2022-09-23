@@ -1,0 +1,51 @@
+{
+	"Program stub": {
+		"prefix": ["entry-vectors", "program-stub"],
+		"description": "A program stub with entry, NMI and IRQ",
+		"body": [
+			"// IRQ handler.",
+			"\t.db isr_irq",
+			"// NMI handler",
+			"\t.db isr_nmi",
+			"// Entrypoint",
+			"\t.db entry",
+			"",
+			"\t// An interrupt handler.",
+			"isr_irq:",
+			"isr_nmi:",
+			"\t${1:// Handle interrupts.}",
+			"\t// Acknowledge interrupts and return.",
+			"\tOR  [0xfffe], 0x0c00",
+			"\tMOV PF, [ST]",
+			"\tMOV PC, [ST]",
+			"",
+			"\t// The entrypoint of the program.",
+			"entry:",
+			"\t// Initialise stack.",
+			"\tMOV ST, 0xffff",
+			"\tSUB ST, [0xffff]",
+			"\t${2:// Main code.}",
+			"\t// After main code finishes, halt.",
+			".halt:",
+			"\tOR  [0xfffe], 0x1060",
+			"\tMOV PC, .halt"
+		]
+	},
+	"String iteration": {
+		"prefix": ["string", "string-iter"],
+		"description": "A method that iterates a string",
+		"body": [
+			"${1:function_label}:",
+			"\tLEA PC, [PC~.check]",
+			"\t${2:// Preserve registers.}",
+			".loop:",
+			"\t${3:// Loop code.}",
+			"\tINC R0",
+			".check:",
+			"\tCMP1 [R0]",
+			"\tLEA.UGE PC, [PC~.loop]",
+			"\t${4:// Return.}",
+			"\tMOV PC, [ST]"
+		]
+	}
+}
