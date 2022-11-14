@@ -46,7 +46,7 @@
 		"directives": {
 			"patterns": [{
 				"name": "keyword.control.px16asm",
-				"match": "^\\s*\\.(db|zero|section)\\b"
+				"match": "^\\s*\\.(db|zero|section|equ)\\b"
 			}, {
 				"name": "support.function.px16asm",
 				"match": "^\\s*\\.?\\w+:"
